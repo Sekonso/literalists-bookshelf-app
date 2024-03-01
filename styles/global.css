@@ -1,0 +1,122 @@
+/* Font nunito sans import */
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+
+:root {
+  --dark: #2c2b30;
+  --light-dark: #4f4f51;
+  --lighter-dark: #d6d6d6;
+  --orange: #f58f7c;
+}
+
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: futura;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+input,
+select {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  background: white;
+  color: var(--light-dark);
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+
+input:-webkit-autofill {
+  -webkit-text-fill-color: blue !important;
+}
+
+button {
+  background: none;
+  border: none;
+  border-radius: 5px;
+}
+button:active {
+  scale: 0.9;
+}
+button:hover,
+select:hover {
+  cursor: pointer;
+}
+
+/* Custom scroll bar */
+::-webkit-scrollbar {
+  width: 0.7rem;
+}
+::-webkit-scrollbar-track {
+  background: var(--dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--orange);
+}
+::-webkit-scrollbar-thumb:hover {
+  opacity: 0.9;
+}
+
+/* Utility classes */
+
+/* Container option */
+.container-1 {
+  padding: 1rem;
+}
+.container-2 {
+  padding: 1rem;
+  border-radius: 10px;
+}
+.container-3 {
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+/* Text color */
+.text-white {
+  color: white;
+}
+.text-dark {
+  color: var(--dark);
+}
+.text-light-dark {
+  color: var(--light-dark);
+}
+.text-lighter-dark {
+  color: var(--lighter-dark);
+}
+
+/* Backgorund color */
+.bg-white {
+  background: white;
+}
+.bg-dark {
+  background: var(--dark);
+}
+.bg-light-dark {
+  background: var(--light-dark);
+}
+.bg-orange {
+  background: var(--orange);
+}
+
+/* Text size */
+.text-brand {
+  font-weight: 800;
+  font-size: 2.5rem;
+}
+.text-xlarge {
+  font-weight: 500;
+  font-size: 2.5rem;
+}
+.text-large {
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+.text-small {
+  font-weight: 300;
+  font-size: 0.8rem;
+}

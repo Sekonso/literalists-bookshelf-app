@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Styling import -->
+    <link rel="stylesheet" href="./styles/global.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon" />
+
+    <title>Bookshelf app</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar container-1 bg-dark text-white">
+        <div class="navbar-brand">
+          <h1 class="text-brand">LITERALISTS</h1>
+          <p class="text-lighter-dark text-large">
+            Track your literatures list
+          </p>
+        </div>
+      </nav>
+    </header>
+
+    <main class="bookshelf container-1">
+      <!-- Bookshelf form -->
+      <form action="" class="bookshelf-form container-3 bg-dark text-white">
+        <h1>Masukkan buku</h1>
+        <div class="bookshelf-form-input">
+          <label for="title-input" class="text-large">Judul</label>
+          <input
+            type="text"
+            id="title-input"
+            placeholder="Masukkan judul buku"
+            required
+          />
+        </div>
+        <div class="bookshelf-form-input">
+          <label for="author-input" class="text-large">Penulis</label>
+          <input
+            type="text"
+            id="author-input"
+            placeholder="Masukkan nama penulis"
+            required
+          />
+        </div>
+        <div class="bookshelf-form-input">
+          <label for="year-input" class="text-large">Tahun</label>
+          <input
+            type="number"
+            id="year-input"
+            min="0"
+            placeholder="Masukkan tahun terbit"
+            required
+          />
+        </div>
+        <div class="bookshelf-form-input">
+          <label for="status-input" class="text-large">Status</label>
+          <select id="status-input" name="status">
+            <option value="belum">Belum selesai dibaca</option>
+            <option value="selesai">Selesai dibaca</option>
+          </select>
+        </div>
+        <button
+          type="submit"
+          class="bookshelf-form-submit bg-orange text-white"
+        >
+          MASUKKAN
+        </button>
+      </form>
+
+      <!-- Displaying books -->
+      <section class="bookshelf-display">
+        <!-- Filter -->
+        <section class="bookshelf-filter">
+          <div class="bookshelf-filter-search bg-dark text-white">
+            <input
+              type="text"
+              id="search-input"
+              class="container-2 bg-dark bg-dark text-lighter-dark text-large"
+              placeholder="Cari buku..."
+            />
+            <button id="search-button" class="container-2 bg-dark text-white">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </div>
+          <div class="bookshelf-filter-status bg-dark">
+            <select
+              id="status-filter"
+              class="bg-dark text-lighter-dark text-large"
+            >
+              <option value="semua">Semua</option>
+              <option value="belum">Belum selesai dibaca</option>
+              <option value="selesai">Selesai dibaca</option>
+            </select>
+          </div>
+        </section>
+
+        <!-- Book lists -->
+        <section class="bookshelf-list container-2 bg-dark">
+          <!-- Books -->
+        </section>
+      </section>
+
+      <!-- Popup display -->
+      <div class="popup">
+        <div class="popup-content popup-delete">
+          <p>Apakah kamu yakin ingin menghapus buku ini?</p>
+          <div class="confirmation-buttons">
+            <button id="confirmDelete">Ya</button>
+            <button id="cancelDelete">Tidak</button>
+          </div>
+        </div>
+        <form id="popup-edit-form" class="popup-content popup-edit">
+          <h1>Edit buku</h1>
+          <div class="popup-edit-input">
+            <label for="title-edit-input">Judul</label>
+            <input
+              type="text"
+              id="title-edit-input"
+              placeholder="Masukkan judul buku"
+              required
+            />
+          </div>
+          <div class="popup-edit-input">
+            <label for="author-edit-input">Penulis</label>
+            <input
+              type="text"
+              id="author-edit-input"
+              placeholder="Masukkan nama penulis"
+              required
+            />
+          </div>
+          <div class="popup-edit-input">
+            <label for="year-edit-input">Tahun</label>
+            <input
+              type="number"
+              id="year-edit-input"
+              min="0"
+              placeholder="Masukkan tahun terbit"
+              required
+            />
+          </div>
+          <div class="confirmation-buttons">
+            <button type="submit" id="confirmEdit">Ubah</button>
+            <button id="cancelEdit">Batal</button>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <footer class="container-1 bg-dark text-white">
+      <div class="copyright">
+        <p>
+          Copykanan &copy;2024 Adriansyah. All kanan reserved.
+          <br />
+          Contact us: literalists@gmail.com
+        </p>
+      </div>
+    </footer>
+
+    <!-- Fontawesome kit -->
+    <script
+      src="https://kit.fontawesome.com/4d69af1ea6.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- External script -->
+    <script src="./scripts/index.js"></script>
+  </body>
+</html>
