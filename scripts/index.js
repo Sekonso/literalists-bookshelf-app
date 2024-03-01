@@ -62,8 +62,8 @@ function insertNewBook() {
       id: +new Date(),
       title: titleInput.value,
       author: authorInput.value,
-      year: yearInput.value,
-      isCompleted: statusInput.value === "selesai",
+      year: parseInt(yearInput.value),
+      isComplete: statusInput.value === "selesai",
     };
 
     books.push(newBook);
@@ -82,13 +82,13 @@ function clearInput() {
   statusInput.value = "belum";
 }
 
-// Filter tampilan buku bedasarkan nilai searching dan isCompleted
+// Filter tampilan buku bedasarkan nilai searching dan isComplete
 function filterBook() {
   const searchValue = searchInput.value.toLowerCase();
   return books.filter(
     (book) =>
       book.title.toLowerCase().includes(searchValue) &&
-      checkStatusFilter(book.isCompleted)
+      checkStatusFilter(book.isComplete)
   );
 }
 
@@ -132,7 +132,7 @@ function createBookElement(book) {
 
   const statusToggleButton = document.createElement("button");
   statusToggleButton.classList.add("check", "bg-white", "text-dark");
-  statusToggleButton.innerHTML = book.isCompleted
+  statusToggleButton.innerHTML = book.isComplete
     ? '<i class="fa-solid fa-rotate-left"></i>'
     : '<i class="fa-solid fa-check"></i>';
   statusToggleButton.addEventListener("click", () => toggleBookStatus(book.id));
@@ -171,6 +171,8 @@ function displayBooks(bookList) {
   } catch (error) {
     console.error(`Error displaying the book: ${error.message}`);
   }
+
+  console.log(books);
 }
 
 // Menampilkan buku bedasarkan kriteria search dan status filter
@@ -207,7 +209,7 @@ function setBooksToStorage() {
 function toggleBookStatus(id) {
   const index = books.findIndex((book) => book.id === id);
   if (index !== -1) {
-    books[index].isCompleted = !books[index].isCompleted;
+    books[index].isComplete = !books[index].isComplete;
     setBooksToStorage();
     displayFilteredBooks(books);
   }
@@ -281,8 +283,8 @@ function editBook(id) {
       id: id,
       title: titleEditInput.value,
       author: authorEditInput.value,
-      year: yearEditInput.value,
-      isCompleted: books[index].isCompleted,
+      year: parseInt(yearEditInput.value),
+      isComplete: books[index].isComplete,
     };
 
     books[index] = newValue;
