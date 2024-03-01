@@ -150,8 +150,8 @@
   color: white;
 }
 
-.popup-edit h1,
-.popup-edit p {
+.popup-content h1,
+.popup-content p {
   text-align: center;
 }
 .popup-edit-input {
