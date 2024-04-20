@@ -19,7 +19,4 @@ Dengan kriteria:
 - Custom dialogue ketika mengedit atau menghapus buku (Nilai tambahan)
 
 Proyek bisa dikunjungi lewat [github page](https://sekonso.github.io/literalists-bookshelf-app/) atau bisa di clone dan langsung dijalankan di server localhost
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
 
